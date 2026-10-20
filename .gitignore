@@ -1,0 +1,21 @@
+# OS metadata
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# Dependencies and generated artifacts
+node_modules/
+test/browser/package-lock.json
+npm-debug.log*
+pnpm-debug.log*
+*.tgz
+coverage/
+.tmp/
+tmp/
+
+# Local secrets and tool state
+.env
+.env.*
+*.local
+.qoder/

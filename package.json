@@ -1,0 +1,65 @@
+{
+  "name": "dsh-multidb-lens",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness (DSH) plugin for smart or raw selection search across ten protein, microbiome and literature databases, with per-source toggles, ordering, BLAST, result actions, pagination and a short-lived cache.",
+  "type": "module",
+  "license": "MIT",
+  "author": "dsh-multidb-lens contributors",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "ncbi",
+    "uniprot",
+    "gtdb",
+    "bacdive",
+    "silva",
+    "lpsn",
+    "seqcode",
+    "pubmed",
+    "europepmc",
+    "openalex",
+    "literature",
+    "microbiology",
+    "protein",
+    "blast",
+    "selection"
+  ],
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/",
+    "lib/",
+    "locale/",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh-CN.md",
+    "docs/",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    },
+    "engines": {
+      "dsh": ">=0.2.1-rc.2"
+    }
+  },
+  "scripts": {
+    "check": "node --check src/index.js && node --check src/config.js && node --check src/query.js && node --check src/http.js && node --check src/html.js && node --check src/analyze.js && node --check src/cache.js && node --check src/rate-limit.js && node --check src/sources.js && node --check src/aggregate.js && node --check src/route.js && node --check lib/client.js",
+    "test": "node --test test/*.test.js"
+  }
+}

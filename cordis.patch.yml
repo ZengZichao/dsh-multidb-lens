@@ -1,0 +1,8 @@
+# Bundle patch for dsh-multidb-lens.
+#
+# The `insert` row mounts the host half (src/index.js). The browser half is
+# served separately through `dsh.client` in package.json, so dsh-client-modules
+# hands ./lib/client.js to every page.
+- insert:
+    - id: dsh-multidb-lens
+      name: dsh-multidb-lens
